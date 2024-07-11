@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaBble!</title>
+</head>
+
+<body>
+
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        /*SIDEBAR*/
+        #sidebar{
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 50px;
+            width: 5vw;
+            height: 90vh;
+            margin-top: 30px;
+            padding-bottom: 30px;
+            position: fixed;
+            background: linear-gradient(#B793C9, #A2BEDC);
+            opacity: 80%;
+            box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+        }
+            .logo{
+                margin-top: 20px;
+            }
+            .sideIcon{
+                padding-top: 50px;
+                margin-left: 6px;
+            }
+            .sideIcon img{
+                height: 70%;
+                width: 70%;
+            }
+
+        /*BACKGROUND*/
+        #wrapper{
+            height: 101%;
+            width: 100%;
+            flex-wrap: wrap;
+            background: linear-gradient(#4E499E, #042440);
+        }
+        #mainBG{
+            margin-left: 13%;
+            margin-right: 10%;
+        }
+
+        /*HEADER*/
+        .title{
+            padding-top: 20px;
+            margin-bottom: -15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            font-size: 70px;
+        }
+        #header p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 14px;
+            padding-left: 3px;
+        }
+
+        /*NAVIGATION*/
+        #navigation a{
+            font-size: 22px;
+            color: #D26B9D;
+            padding-right: 100px;
+            text-decoration: none;
+            padding-left: 100px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #navigation a:hover{
+            color: #B793C9;
+            text-shadow: white;
+        }
+
+        #favorite{
+            margin: 0.5rem 3rem 1rem 3rem;
+        }
+
+        #favorite h1{
+            font-size: 50px;
+            line-height: 50px;
+            background-image: linear-gradient(#A9DFE2, #FDB3CA);
+            color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            text-align: center;
+        }
+        #favorite h6{
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        #favorite h4{
+            color: #A2BEDC;
+            opacity: 80%;
+            font-size: 1rem;
+            font-family: "Waiting for the Sunrise", cursive;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        #favorite p i{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 0.9rem;
+        }
+        #add{
+            background-color: #D26B9D;
+            color: white;
+            border-radius: 0.5rem;
+            width: 3rem;
+            margin-bottom: 1rem;
+        }
+            #add:hover{
+                transition: 0.2s;
+                background-color: #953061;
+            }
+        #list{
+            color: white;
+            margin: 0.5rem 0rem 0rem 4rem;
+            text-shadow: 2px 2px 4px rgba(31, 2, 47, 0.642);
+            opacity: 100%;
+        }
+            #list li:hover{
+                color: #f7c3dc;
+                opacity: 60%;
+            }
+
+        /*FOOTER*/
+        #footer{
+            text-align: center;
+        }
+        .title2{
+            padding-top: 20px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 50px;
+        }
+        .info{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 20px;
+        }
+        #footer p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 16px;
+            padding-left: 3px;
+        }
+    </style>
+
+
+    <div id="sidebar">
+        <div class="logo">
+            <a class="logo" href="index.html" target="_self">
+                <img src="DaBble Logo.png" alt="DaBble Logo" height="100px" width="100px"></a><br>
+        </div><div class="sideIcon">
+            <a href="profile.html" target="_self">
+                <img src="profile.png" alt="Profile Account"></a><br><br>
+            <a href="fave.html" target="_self">
+                <img src="fave.png" alt="Favorite"></a><br><br>
+            <a href="notebook.html" target="_self">
+                <img src="Notebook.png" alt="Notebook"></a><br><br>
+            <a href="aboutNsocials.html" target="_self">
+                <img src="socials.png" alt="Social Media"></a><br>
+        </div>
+    </div>
+
+    <div id="wrapper">
+    <div id="mainBG">
+
+        <div id="header">
+            <div class="title"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <br>
+        </div>
+
+        <div id="navigation">
+            <a href="category.html" target="_self">Category</a>
+            <a href="library.html" target="_self">Library</a>
+            <a href="aboutNsocials.html" target="_self">About Us</a>
+        </div>
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="favorite">
+            <h1>FAVORITE.</h1>
+            <h6> list your favorite books or your "mood" books </h6>
+            <h4>"That's the thing about pain. It demands to be felt" <br> -The Fault In Our Stars by John Green</h4>
+
+            <p><i>[ add it to the list, or delete it by clicking the book title ]</i></p>
+            <br>
+
+            <input type="button" value="Add" id="add">
+            <input type="text" id="idea">
+            <ul id="list"><li></li></ul>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                // Load items from localStorage when the page loads
+                loadItemsFromStorage();
+
+                // Add item to list
+                document.getElementById("add").addEventListener("click", function() {
+                    var text = document.getElementById("idea").value;
+                    if (text.trim() !== '') {
+                        var li = document.createElement("li");
+                        li.textContent = text;
+                        document.getElementById("list").appendChild(li);
+                        document.getElementById("idea").value = '';
+
+                        saveItemsToStorage();
+                    }
+                });
+
+                // Delete item from list when clicked
+                document.getElementById("list").addEventListener("click", function(e) {
+                    if (e.target && e.target.tagName === "LI") {
+                        e.target.remove();
+
+                        saveItemsToStorage();
+                    }
+                });
+
+                // save items to localStorage
+                function saveItemsToStorage() {
+                    var items = [];
+                    var lis = document.getElementById("list").getElementsByTagName("li");
+                    for (var i = 0; i < lis.length; i++) {
+                        items.push(lis[i].textContent.trim());
+                    }
+                    localStorage.setItem("listItems", JSON.stringify(items));
+                }
+
+                // load items from localStorage
+                function loadItemsFromStorage() {
+                    var items = JSON.parse(localStorage.getItem("listItems")) || [];
+                    var ul = document.getElementById("list");
+                    ul.innerHTML = "<li><b>Topics</b></li>";
+                    items.forEach(function(item) {
+                        var li = document.createElement("li");
+                        li.textContent = item;
+                        ul.appendChild(li);
+                    });
+                }
+
+                var initialItem = document.querySelector("#list li");
+                        if (initialItem) {
+                            initialItem.remove();
+                        }
+            });
+            </script>
+
+        </div>  
+
+        <br>
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="footer">
+            <div class="title2"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <div class="info"> Made by Sophia Gabrielle S. Calalay
+                <br> Email : sgscalalay@gmail.com </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

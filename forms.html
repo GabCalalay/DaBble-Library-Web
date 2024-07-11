@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaBble!</title>
+</head>
+
+<body>
+
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        /*BACKGROUND*/
+        #wrapper{
+            height: 101%;
+            width: 100%;
+            flex-wrap: wrap;
+            background: linear-gradient(#4E499E, #042440);
+        }
+        #mainBG{
+            margin-left: 13%;
+            margin-right: 10%;
+        }
+
+        /*HEADER*/
+        #header{
+            text-align: center;
+        }
+        .title{
+            padding-top: 20px;
+            margin-bottom: -15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            font-size: 70px;
+        }
+        #header p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 14px;
+            padding-left: 3px;
+        }
+
+        /* FORMS */
+        #forms{
+            width: 100%;
+            text-align: center;
+
+        }
+        form h2{
+            width: 100%;
+            text-align: center;
+            font-size: 60px;
+            float: left;
+            line-height: 50px;
+            background-image: linear-gradient(#A9DFE2, #FDB3CA);
+            color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        .inputBox input{
+            background-color: #4E499E;
+            color:white;
+        }
+        .inputBox input:hover{
+            background-color: #4E499E;
+            color:rgb(199, 182, 249);
+        }
+        ::placeholder{
+            color: white;
+            opacity: 70%;
+        }
+
+
+        /*FOOTER*/
+        #footer{
+            text-align: center;
+        }
+        .title2{
+            padding-top: 20px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 50px;
+        }
+        .info{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 20px;
+        }
+        #footer p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 16px;
+            padding-left: 3px;
+        }
+    </style>
+
+
+    <div id="wrapper">
+    <div id="mainBG">
+
+        <div id="header">
+            <div class="title"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <br>
+        </div>
+        <hr style="width: 100%; margin-top:10px ;">
+
+        <form id="signupForm" target="_blank" action="https://formsubmit.co/sgscalalay@gmail.com" method="POST">
+            <h2>SIGN UP</h2>
+            <div id="forms">
+            <div class="inputBox">
+                <input type="text" name="Username" placeholder="Username" required>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="Email" placeholder="Email" required>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="password" name="Password" placeholder="Password" required>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="confirmPassword" name="Password Confirmation" placeholder="Confirm Password" required>
+            </div>
+            <div class="inputBox" style="padding-top: 1rem;">
+                <input type="submit" value="Create">
+            </div>
+        </form>
+        </div>
+
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="footer">
+            <div class="title2"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <div class="info"> Made by Sophia Gabrielle S. Calalay
+                <br> Email : sgscalalay@gmail.com </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "index.html";
+        });
+    </script> -->
+
+</body>
+</html>

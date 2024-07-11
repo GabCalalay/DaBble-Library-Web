@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaBble!</title>
+</head>
+
+<body>
+
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        /*SIDEBAR*/
+        #sidebar{
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 50px;
+            width: 5vw;
+            height: 90vh;
+            margin-top: 30px;
+            padding-bottom: 30px;
+            position: fixed;
+            background: linear-gradient(#B793C9, #A2BEDC);
+            opacity: 80%;
+            box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+        }
+            .logo{
+                margin-top: 20px;
+            }
+            .sideIcon{
+                padding-top: 50px;
+                margin-left: 6px;
+            }
+            .sideIcon img{
+                height: 70%;
+                width: 70%;
+            }
+
+        /*BACKGROUND*/
+        #wrapper{
+            height: 101%;
+            width: 100%;
+            flex-wrap: wrap;
+            background: linear-gradient(#4E499E, #042440);
+        }
+        #mainBG{
+            margin-left: 13%;
+            margin-right: 10%;
+        }
+
+        /*HEADER*/
+        .title{
+            padding-top: 20px;
+            margin-bottom: -15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            font-size: 70px;
+        }
+        #header p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 14px;
+            padding-left: 3px;
+        }
+
+        /*NAVIGATION*/
+        #navigation a{
+            font-size: 22px;
+            color: #D26B9D;
+            padding-right: 100px;
+            text-decoration: none;
+            padding-left: 100px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #navigation a:hover{
+            color: #B793C9;
+            text-shadow: white;
+        }
+
+        /* SEARCH */
+        .search {
+            justify-content: flex-start;
+            width: 100%;
+            margin-top:20px;
+            padding-left: 65%;
+        }
+
+        .search input[type="text"] {
+            padding: 6px;
+            margin-right: 5px;
+            border: none;
+            font-size: 17px;
+            border-radius: 4px;
+        }
+
+        .search button {
+            padding: 6px 10px;
+            background: #B793C9;
+            color: rgb(51, 44, 248);
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .search button:hover {
+            background: #D26B9D;
+            color: white;
+        }
+        .search button:active{
+            background: #953a66;
+            color: white;
+        }
+        .search img{
+            width: 15px;
+            height: auto;
+        }
+
+        /* QUOTE */
+        .quote p{
+            color: #A2BEDC;
+            opacity: 80%;
+            font-size: 1rem;
+            font-family: "Waiting for the Sunrise", cursive;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* CATEGORY */
+        #category h1{ 
+            padding-top: 25px;
+            margin-left: 10%;
+            margin-bottom: -10px;
+            font-size: 60px;
+            float: left;
+            line-height: 50px;
+            background-image: linear-gradient(#A9DFE2, #FDB3CA);
+            color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+        }
+
+        #toggle h2{
+            background-color: #D26B9D;
+            color: white;
+            border-radius: 1rem;
+            padding: 1rem 1rem 1rem 1rem;
+            width: 15rem;
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(33, 6, 52, 0.096);
+            box-shadow: 2px 2px 2px rgba(33, 6, 52, 0.304);
+        }
+        #toggle summary{
+            margin-top: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            width: 15rem;
+        }
+            #toggle summary:hover{
+                color: #D26B9D;
+            }
+        .books{
+            margin: 0.5rem 2rem 2rem 3rem;
+        }
+            .books img{
+                width: 8rem;
+                height: 11.5rem;
+                opacity: 80%;
+                margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+            }
+            .books img:hover{
+                transition: 0.3s;
+                opacity: 100%;
+                box-shadow: 5px 5px 7px rgba(232, 232, 232, 0.737);
+                width: 8.5rem;
+                height: 12rem;
+            }
+
+
+        /*FOOTER*/
+        #footer{
+            text-align: center;
+        }
+        .title2{
+            padding-top: 20px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 50px;
+        }
+        .info{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 20px;
+        }
+        #footer p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 16px;
+            padding-left: 3px;
+        }
+    </style>
+
+
+    <div id="sidebar">
+        <div class="logo">
+            <a class="logo" href="index.html" target="_self">
+                <img src="DaBble Logo.png" alt="DaBble Logo" height="100px" width="100px"></a><br>
+        </div><div class="sideIcon">
+            <a href="profile.html" target="_self">
+                <img src="profile.png" alt="Profile Account"></a><br><br>
+            <a href="fave.html" target="_self">
+                <img src="fave.png" alt="Favorite"></a><br><br>
+            <a href="notebook.html" target="_self">
+                <img src="Notebook.png" alt="Notebook"></a><br><br>
+            <a href="aboutNsocials.html" target="_self">
+                <img src="socials.png" alt="Social Media"></a><br>
+        </div>
+    </div>
+
+    <div id="wrapper">
+    <div id="mainBG">
+
+        <div id="header">
+            <div class="title"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <br>
+        </div>
+
+        <div id="navigation">
+            <a href="category.html" target="_self" style="color: #ffffff;">Category</a>
+            <a href="library.html" target="_self">Library</a>
+            <a href="aboutNsocials.html" target="_self">About Us</a>
+        </div>
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="category">
+            <h1>CATEGORY.</h1>
+            <br>
+            <div class="search">
+                <form action="#">
+                    <input type="text" placeholder="Search for books..." name="search">
+                    <button>
+                         <img src="search.png">
+                    </button>
+                </form>
+            </div><br>
+            <hr style="width: 100%; margin-top:10px ;"><br>
+            <div class="quote">
+            <p>"Hating someone feels disturbingly similar to being in love with them"<br>- The Hating Game by Sally Thorne</p>
+            </div>
+
+            <div id="toggle">
+                <h2>BY GENRES</h2>
+                <details open>
+                    <summary>Romance</summary>
+                    <div class="books"><img src="Spanish Love Deception.jpg">
+                        <img src="Icebreaker.jpg">
+                        <img src="things we never got over.jpg">
+                        <img src="Fine Print.jpg">
+                        <img src="josh and hazel guide.jpg"></div>
+                </details>
+
+                <details open>
+                    <summary>Sci-Fi</summary>
+                    <div class="books"><img src="Fiasco.jpg">
+                        <img src="High Auction.jpg">
+                        <img src="Hunger Games.jpg">
+                        <img src="Midnight Library.jpg">
+                        <img src="Institute.jpg"></div>
+                </details>
+
+                <details open>
+                    <summary>Fantasy</summary>
+                    <div class="books"><img src="Harry Potter.jpg">
+                        <img src="Fourth Wing.jpg">
+                        <img src="Cruel Prince.jpg">
+                        <img src="Games of Thrones.jpg">
+                        <img src="Court of Thrones.jpg"></div>
+                </details>
+
+                <details open>
+                    <summary>Children</summary>
+                    <div class="books"><img src="Geronimo.jpg">
+                        <img src="Thea Stilston.jpg">
+                        <img src="Little Prince.jpg">
+                        <img src="Wonka.jpg">
+                        <img src="Camp Prodigy.jpg"></div>
+                </details>
+
+                <details open>
+                    <summary>Non-Fic</summary>
+                    <div class="books"><img src="Tuesday with Morrie.jpg">
+                        <img src="Diary of a Young Girl.jpg">
+                        <img src="There is no ethan.jpg">
+                        <img src="Sing Like Fish.jpg">
+                        <img src="Consent.jpg"></div>
+                </details>
+            </div>
+
+            <div class="quote">
+                <p>"I never got to fall out of love. I just had to move on when she walked out"<br>- Love and Other Words by Christina Lauren</p>
+                </div>
+
+            <div id="toggle">
+                <h2>BY TROPES</h2>
+                <details open>
+                    <summary>Friends to Lovers</summary>
+                    <div class="books"><img src="people we meet on vacation.jpg">
+                        <img src="hook line sinkers.jpg">
+                        <img src="aristotle and dante.jpg">
+                        <img src="cheat sheet.jpg">
+                        <img src="thousand boy kisses.jpg"></div>
+                </details>
+
+                <details open>
+                    <summary>Love Triangle</summary>
+                    <div class="books"><img src="bridget jones diary.jpg">
+                        <img src="summer I turned prettyu.jpg">
+                        <img src="to all the boys ive loved before.jpg">
+                        <img src="One true love.jpg">
+                        <img src="kiss thief.jpg"></div>
+                </details>
+
+                <details open>
+                    <summary>Second Chance</summary>
+                    <div class="books"><img src="Love and Other Words.jpg">
+                        <img src="you deserve each other.jpg">
+                        <img src="persuasion.jpg">
+                        <img src="it ends with us.jpg">
+                        <img src="hopeless.jpg"></div>
+                </details>
+
+            </div>
+
+
+
+
+        </div>
+
+        <br>
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="footer">
+            <div class="title2"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <div class="info"> Made by Sophia Gabrielle S. Calalay
+                <br> Email : sgscalalay@gmail.com </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

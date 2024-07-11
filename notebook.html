@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaBble!</title>
+</head>
+
+<body>
+
+    <style>
+
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        /*SIDEBAR*/
+        #sidebar{
+            border-top-right-radius: 60px;
+            border-bottom-right-radius: 50px;
+            width: 5vw;
+            height: 90vh;
+            margin-top: 30px;
+            padding-bottom: 30px;
+            position: fixed;
+            background: linear-gradient(#B793C9, #A2BEDC);
+            opacity: 80%;
+            box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+        }
+            .logo{
+                margin-top: 20px;
+            }
+            .sideIcon{
+                padding-top: 50px;
+                margin-left: 6px;
+            }
+            .sideIcon img{
+                height: 70%;
+                width: 70%;
+            }
+
+        /*BACKGROUND*/
+        #wrapper{
+            height: 101%;
+            width: 100%;
+            flex-wrap: wrap;
+            background: linear-gradient(#4E499E, #042440);
+        }
+        #mainBG{
+            margin-left: 13%;
+            margin-right: 10%;
+        }
+
+        /*HEADER*/
+        .title{
+            padding-top: 20px;
+            margin-bottom: -15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            font-size: 70px;
+        }
+        #header p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 14px;
+            padding-left: 3px;
+        }
+
+        /*NAVIGATION*/
+        #navigation a{
+            font-size: 22px;
+            color: #D26B9D;
+            padding-right: 100px;
+            text-decoration: none;
+            padding-left: 100px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #navigation a:hover{
+            color: #B793C9;
+            text-shadow: white;
+        }
+
+        /* QUOTE */
+        .quote p{
+            color: #A2BEDC;
+            opacity: 80%;
+            font-size: 1rem;
+            font-family: "Waiting for the Sunrise", cursive;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /*NOTEBOOK*/
+        #notebook h2{
+            color: #A2BEDC;
+            font-size: 2rem;
+            text-align: center;
+            padding-top: 25px;
+        }
+        #notebook h1{
+            padding: 0rem 17.5rem 2rem 17.5rem;
+            margin-bottom: -10px;
+            font-size: 60px;
+            float: left;
+            line-height: 50px;
+            background-image: linear-gradient(#A9DFE2, #FDB3CA);
+            color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.642);
+            width: 100%;
+        }
+
+
+        /* NOTEBOOK - BOOKMARK */
+        #bookmark{
+            margin: 0.5rem 3rem 1rem 3rem;
+        }
+        #bookmark h4{
+            background-color: #D26B9D;
+            color: white;
+            border-radius: 1rem;
+            padding: 1rem 1rem 1rem 1rem;
+            width: 15rem;
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(33, 6, 52, 0.096);
+            box-shadow: 2px 2px 2px rgba(33, 6, 52, 0.304);
+        }
+            #surveyForm label{
+                color:white;
+                opacity: 80%;
+            }
+            #surveyForm input, textarea{
+                color:#4E499E;
+                margin-bottom: 0.5rem;
+            }
+        #title{margin-left:1rem; width: 20rem;}
+        #author{margin-left:2.5rem; width: 20rem;}
+        #chapt{margin-left:2rem; width: 20rem;}
+        #mark{margin-left:1rem; width: 20rem;}
+
+        .button input{
+            margin: 0.5rem rem 1rem 15rem;
+            width: 2.5rem;
+        }
+        #surveyForm{
+            margin: 0.5rem 5rem 0.5rem 5rem;
+        }
+        #entries{
+            color: #A2BEDC;
+        }
+
+        /* NOTEBOOK - ADDITIONAL NOTES */
+        #notes{
+            margin: 0.5rem 3rem 1rem 3rem;
+        }
+        #notes h4 a{
+            background-color: #D26B9D;
+            color: white;
+            border-radius: 1rem;
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(33, 6, 52, 0.096);
+            box-shadow: 2px 2px 2px rgba(33, 6, 52, 0.304);
+            text-decoration: none;
+        }
+        #noted h4 a:hover{
+            background-color: #9b3365;
+            transition: 0.2s;
+        }
+        #notes p{
+            margin-bottom: 1rem;
+            color: white;
+            opacity: 70%;
+            font-size: 12px;
+        }
+
+
+        /*FOOTER*/
+        #footer{
+            text-align: center;
+        }
+        .title2{
+            padding-top: 20px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 50px;
+        }
+        .info{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            margin-bottom: -10px;
+            color: white;
+            font-size: 20px;
+        }
+        #footer p{
+            color: #A2BEDC;
+            opacity: 70%;
+            font-size: 16px;
+            padding-left: 3px;
+        }
+
+    </style>
+
+
+    <div id="sidebar">
+        <div class="logo">
+            <a class="logo" href="index.html" target="_self">
+                <img src="DaBble Logo.png" alt="DaBble Logo" height="100px" width="100px"></a><br>
+        </div><div class="sideIcon">
+            <a href="profile.html" target="_self">
+                <img src="profile.png" alt="Profile Account"></a><br><br>
+            <a href="fave.html" target="_self">
+                <img src="fave.png" alt="Favorite"></a><br><br>
+            <a href="notebook.html" target="_self">
+                <img src="Notebook.png" alt="Notebook"></a><br><br>
+            <a href="aboutNsocials.html" target="_self">
+                <img src="socials.png" alt="Social Media"></a><br>
+        </div>
+    </div>
+
+    <div id="wrapper">
+    <div id="mainBG">
+
+        <div id="header">
+            <div class="title"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <br>
+        </div>
+
+        <div id="navigation">
+            <a href="category.html" target="_self">Category</a>
+            <a href="library.html" target="_self">Library</a>
+            <a href="aboutNsocials.html" target="_self">About Us</a>
+        </div>
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="notebook">
+            <h2>WELCOME TO</h2>
+            <h1>NOTEBOOK.</h1>
+
+            <div class="quote">
+                <p>"If you can't talk about it, you shouldn't be doing it"<br>- Love and Other Words by Christina Lauren</p>
+                </div>
+
+                <hr style="width: 100%; margin-top:10px ;"><br>
+
+                <div id="bookmark">
+                    <h4>Bookmarks</h4>
+                    <br>
+                    <div class="container">
+                        <form id="surveyForm">
+                            <label for="title">Book Title:</label>
+                            <input type="text" id="title" name="title" required>
+                            <br>
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" name="author" required>
+                            <br>
+                            <label for="chapt">Chapter:</label>
+                            <input type="number" id="chapt" name="chapt" required>
+                            <br>
+                            <label>Status:</label><br>
+                                <input type="radio" id="wantToRead" name="status" value="Want to Read" required>
+                                <label for="wantToRead">Want to Read</label><br>
+                                <input type="radio" id="reading" name="status" value="Reading">
+                                <label for="reading">Reading</label><br>
+                                <input type="radio" id="doneReading" name="status" value="Done Reading">
+                                <label for="doneReading">Done Reading</label><br>
+                            <br>
+                            <label for="mark">Bookmark:</label>
+                            <textarea id="mark" name="mark" rows="4" required></textarea>
+                            <br>
+                            <input type="submit" value="Add">
+                        </form>
+
+                        <div id="entries"><br>
+                            <ul id="entryList"></ul></div>
+                    </div></div>
+
+                    <br>
+                    <hr style="width: 100%; margin-top:10px ;"><br>
+
+                    <div id="notes">
+                        <p> want to access additional part?<br>
+                            link below was all credits to Devression</p>
+                        <h4><a href="add.html" target="_blank">ADDITIONAL NOTES</a></h4>
+                     
+                    </div>
+        </div>
+        <br>
+        <hr style="width: 100%; margin-top:10px ;"><br>
+
+        <div id="footer">
+            <div class="title2"> DaBble.</div>
+            <p>Da ability to experience different lives.</p>
+            <div class="info"> Made by Sophia Gabrielle S. Calalay
+                <br> Email : sgscalalay@gmail.com </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var title = document.getElementById('title').value;
+            var author = document.getElementById('author').value;
+            var chapt = document.getElementById('chapt').value;
+            var status = document.querySelector('input[name="status"]:checked').value;
+            var mark = document.getElementById('mark').value;
+
+            var existingEntries = JSON.parse(localStorage.getItem('surveyEntries')) || [];
+
+            var newEntry = {
+                title: title,
+                author: author,
+                chapt: chapt,
+                status: status,
+                mark: mark,
+            };
+
+            existingEntries.push(newEntry);
+            localStorage.setItem('surveyEntries', JSON.stringify(existingEntries));
+
+            document.getElementById('surveyForm').reset();
+            displayEntries();
+        });
+
+        function displayEntries() {
+            var entryList = document.getElementById('entryList');
+            var entries = JSON.parse(localStorage.getItem('surveyEntries')) || [];
+
+            entryList.innerHTML = '';
+
+            entries.forEach(function(entry, index) {
+                var listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <strong>Book Title:</strong> ${entry.title}<br>
+                    <strong>Author:</strong> ${entry.author}<br>
+                    <strong>Chapter:</strong> ${entry.chapt}<br>
+                    <strong>Status:</strong> ${entry.status}<br>
+                    <strong>Bookmark:</strong> ${entry.mark}<br>
+                `;
+                listItem.style.cursor = 'pointer';
+
+                // Create edit and delete options
+                var optionsForm = document.createElement('form');
+                optionsForm.innerHTML = `
+                    <label for="delete-${index}" class="delete-btn">Delete</label>
+                    <input type="radio" id="delete-${index}" name="action-${index}" value="delete">
+                `;
+
+                listItem.appendChild(optionsForm);
+                entryList.appendChild(listItem);
+
+                // Event listener for delete click
+                var deleteLabel = optionsForm.querySelector('.delete-btn');
+                deleteLabel.addEventListener('click', function() {
+                    deleteEntry(index);
+                });
+            });
+        }
+
+        function deleteEntry(index) {
+            var entries = JSON.parse(localStorage.getItem('surveyEntries')) || [];
+            entries.splice(index, 1);
+            localStorage.setItem('surveyEntries', JSON.stringify(entries));
+            displayEntries();
+        }
+
+        displayEntries(); // Initial display on page load
+    });
+
+    </script>
+</body>
+</html>
